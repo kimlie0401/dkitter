@@ -20,19 +20,22 @@ const Home = ({ userObj }) => {
   //   };
 
   useEffect(() => {
-    dbService.collection("dweets").onSnapshot((snapshot) => {
-      const dweetArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setDweets(dweetArray);
-    });
+    dbService
+      .collection("dweets")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snapshot) => {
+        const dweetArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setDweets(dweetArray);
+      });
   }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();
     let attachmentUrl = "";
-    if (attachment != null) {
+    if (attachment !== null) {
       const attachmentRef = storageService
         .ref()
         .child(`${userObj.uid}/${uuidv4()}`);
