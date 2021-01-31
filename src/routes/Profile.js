@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { authService, dbService } from "../fbase";
+import { authService } from "../fbase";
 
-const Profile = ({ userObj }) => {
+const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
 
   const onLogOutClick = () => {
     authService.signOut();
     history.push("/");
-  };
-
-  const getMyDweets = async () => {
-    const dweets = await dbService
-      .collection("dweets")
-      .where("creatorId", "==", userObj.uid)
-      .orderBy("createdAt", "desc")
-      .get();
-    console.log(dweets.docs.map((doc) => doc.data()));
   };
 
   const onChange = (event) => {
@@ -33,12 +24,22 @@ const Profile = ({ userObj }) => {
       await userObj.updateProfile({
         displayName: newDisplayName,
       });
+      refreshUser();
     }
   };
 
-  useEffect(() => {
-    getMyDweets();
-  });
+  //   const getMyDweets = async () => {
+  //     const dweets = await dbService
+  //       .collection("dweets")
+  //       .where("creatorId", "==", userObj.uid)
+  //       .orderBy("createdAt", "desc")
+  //       .get();
+  //     console.log(dweets.docs.map((doc) => doc.data()));
+  //   };
+
+  //   useEffect(() => {
+  //     getMyDweets();
+  //   });
 
   return (
     <>
