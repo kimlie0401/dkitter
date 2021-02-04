@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/dkitter/static/css/main.931739ec.chunk.css",
+    "main.js": "/dkitter/static/js/main.62a9189f.chunk.js",
+    "main.js.map": "/dkitter/static/js/main.62a9189f.chunk.js.map",
+    "runtime-main.js": "/dkitter/static/js/runtime-main.dfd57f26.js",
+    "runtime-main.js.map": "/dkitter/static/js/runtime-main.dfd57f26.js.map",
+    "static/js/2.2d5ab931.chunk.js": "/dkitter/static/js/2.2d5ab931.chunk.js",
+    "static/js/2.2d5ab931.chunk.js.map": "/dkitter/static/js/2.2d5ab931.chunk.js.map",
+    "index.html": "/dkitter/index.html",
+    "static/css/main.931739ec.chunk.css.map": "/dkitter/static/css/main.931739ec.chunk.css.map",
+    "static/js/2.2d5ab931.chunk.js.LICENSE.txt": "/dkitter/static/js/2.2d5ab931.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfd57f26.js",
+    "static/js/2.2d5ab931.chunk.js",
+    "static/css/main.931739ec.chunk.css",
+    "static/js/main.62a9189f.chunk.js"
+  ]
+}
