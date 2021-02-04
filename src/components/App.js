@@ -42,7 +42,7 @@ function App() {
       ) : (
         "Initializing...."
       )}
-      <footer>&copy;{new Date().getFullYear()} Dkitter</footer>
+      {/* <footer>&copy;{new Date().getFullYear()} Dkitter</footer> */}
     </>
   );
 }
